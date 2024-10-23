@@ -1,8 +1,13 @@
-import { logger, logError } from './configs/logger';
+import { logger } from './configs/logger';
 
-logger.info('a=1');
-logger.warn('temperature is too high');
-logger.error('failed to connect');
-logger.debug('processing data');
+const today: Date = new Date();
 
-logger.info('user logged in', { username: 'mayuri' });
+logger.info('formated time', { 
+    today: today.toLocaleString(
+        'en-US',
+        {
+            timeZone: 'Asia/Jakarta',
+            hour12: false,
+        }
+    ),
+});
